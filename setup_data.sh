@@ -8,8 +8,11 @@ cd data
 wget "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
 wget "http://download.geonames.org/export/dump/cities500.zip"
 
-#mv cities500.txt cities.csv
 unzip "*.zip"
 rm -rf *.zip
 
+mv cities500.txt cities.dat
+mv *T100_SEGMENT_ALL_CARRIER.csv flights.dat
+
 cd -
+
