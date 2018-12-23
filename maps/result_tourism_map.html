@@ -1,0 +1,248 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(63.985000, -22.605600);
+		var myOptions = {
+			zoom: 3,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var latlng = new google.maps.LatLng(63.985000, -22.605600);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/0000FF.png');
+		var marker = new google.maps.Marker({
+		title: "Keflavik International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(19.738800, -156.046000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/008000.png');
+		var marker = new google.maps.Marker({
+		title: "Kona International At Keahole Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(33.636700, -84.428100);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "Hartsfield Jackson Atlanta International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(66.884700, -162.599000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/00FFFF.png');
+		var marker = new google.maps.Marker({
+		title: "Ralph Wien Memorial Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(20.898600, -156.430000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF00FF.png');
+		var marker = new google.maps.Marker({
+		title: "Kahului Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(21.976000, -159.339000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FFFF00.png');
+		var marker = new google.maps.Marker({
+		title: "Lihue Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(55.355600, -131.714000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/000000.png');
+		var marker = new google.maps.Marker({
+		title: "Ketchikan International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(64.512200, -165.445000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/800000.png');
+		var marker = new google.maps.Marker({
+		title: "Nome Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(56.484300, -132.370000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FFC0CB.png');
+		var marker = new google.maps.Marker({
+		title: "Wrangell Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(60.779800, -161.838000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/DDA0DD.png');
+		var marker = new google.maps.Marker({
+		title: "Bethel Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(18.337300, -64.973400);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/F0F8FF.png');
+		var marker = new google.maps.Marker({
+		title: "Cyril E. King Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(56.801700, -132.945000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF00FF.png');
+		var marker = new google.maps.Marker({
+		title: "Petersburg James A Johnson Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(28.429400, -81.309000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/DCDCDC.png');
+		var marker = new google.maps.Marker({
+		title: "Orlando International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(57.047100, -135.362000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/CD5C5C.png');
+		var marker = new google.maps.Marker({
+		title: "Sitka Rocky Gutierrez Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(71.285400, -156.766000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/F0E68C.png');
+		var marker = new google.maps.Marker({
+		title: "Wiley Post Will Rogers Memorial Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(59.044700, -158.505000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FFFFF0.png');
+		var marker = new google.maps.Marker({
+		title: "Dillingham Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(26.511400, -77.083500);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/9ACD32.png');
+		var marker = new google.maps.Marker({
+		title: "Marsh Harbour International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(36.080100, -115.152000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/D2B48C.png');
+		var marker = new google.maps.Marker({
+		title: "McCarran International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(21.318700, -157.922000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF6347.png');
+		var marker = new google.maps.Marker({
+		title: "Honolulu International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(24.556100, -81.759600);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF4500.png');
+		var marker = new google.maps.Marker({
+		title: "Key West International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(45.777500, -111.153000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/F4A460.png');
+		var marker = new google.maps.Marker({
+		title: "Gallatin Field",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(18.503700, -77.913400);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FA8072.png');
+		var marker = new google.maps.Marker({
+		title: "Sangster International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(40.718700, -114.031000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/AFEEEE.png');
+		var marker = new google.maps.Marker({
+		title: "Wendover Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(13.483400, 144.796000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/808000.png');
+		var marker = new google.maps.Marker({
+		title: "Antonio B. Won Pat International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(19.292800, -81.357700);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/E6E6FA.png');
+		var marker = new google.maps.Marker({
+		title: "Owen Roberts International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

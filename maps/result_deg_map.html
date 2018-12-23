@@ -1,0 +1,248 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(33.942500, -118.408000);
+		var myOptions = {
+			zoom: 3,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var latlng = new google.maps.LatLng(33.942500, -118.408000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/0000FF.png');
+		var marker = new google.maps.Marker({
+		title: "Los Angeles International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(25.793200, -80.290600);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/008000.png');
+		var marker = new google.maps.Marker({
+		title: "Miami International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(41.978600, -87.904800);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "Chicago O'Hare International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(33.636700, -84.428100);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/00FFFF.png');
+		var marker = new google.maps.Marker({
+		title: "Hartsfield Jackson Atlanta International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(40.639800, -73.778900);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF00FF.png');
+		var marker = new google.maps.Marker({
+		title: "John F Kennedy International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(40.850100, -74.060800);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FFFF00.png');
+		var marker = new google.maps.Marker({
+		title: "Teterboro Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(32.896800, -97.038000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/000000.png');
+		var marker = new google.maps.Marker({
+		title: "Dallas Fort Worth International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(40.692500, -74.168700);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/800000.png');
+		var marker = new google.maps.Marker({
+		title: "Newark Liberty International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(29.984400, -95.341400);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FFC0CB.png');
+		var marker = new google.maps.Marker({
+		title: "George Bush Intercontinental Houston Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(41.067000, -73.707600);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/DDA0DD.png');
+		var marker = new google.maps.Marker({
+		title: "Westchester County Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(38.944500, -77.455800);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/F0F8FF.png');
+		var marker = new google.maps.Marker({
+		title: "Washington Dulles International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(39.861700, -104.673000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF00FF.png');
+		var marker = new google.maps.Marker({
+		title: "Denver International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(44.882000, -93.221800);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/DCDCDC.png');
+		var marker = new google.maps.Marker({
+		title: "Minneapolis-St Paul International/Wold-Chamberlain Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(61.174400, -149.996000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/CD5C5C.png');
+		var marker = new google.maps.Marker({
+		title: "Ted Stevens Anchorage International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(36.080100, -115.152000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/F0E68C.png');
+		var marker = new google.maps.Marker({
+		title: "McCarran International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(42.364300, -71.005200);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FFFFF0.png');
+		var marker = new google.maps.Marker({
+		title: "General Edward Lawrence Logan International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(28.429400, -81.309000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/9ACD32.png');
+		var marker = new google.maps.Marker({
+		title: "Orlando International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(35.214000, -80.943100);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/D2B48C.png');
+		var marker = new google.maps.Marker({
+		title: "Charlotte Douglas International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(26.072600, -80.152700);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF6347.png');
+		var marker = new google.maps.Marker({
+		title: "Fort Lauderdale Hollywood International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(35.042400, -89.976700);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FF4500.png');
+		var marker = new google.maps.Marker({
+		title: "Memphis International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(42.212400, -83.353400);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/F4A460.png');
+		var marker = new google.maps.Marker({
+		title: "Detroit Metropolitan Wayne County Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(37.619000, -122.375000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/FA8072.png');
+		var marker = new google.maps.Marker({
+		title: "San Francisco International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(39.871900, -75.241100);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/AFEEEE.png');
+		var marker = new google.maps.Marker({
+		title: "Philadelphia International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(47.449000, -122.309000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/808000.png');
+		var marker = new google.maps.Marker({
+		title: "Seattle Tacoma International Airport",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(38.174400, -85.736000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python2.7/dist-packages/gmplot/markers/E6E6FA.png');
+		var marker = new google.maps.Marker({
+		title: "Louisville International Standiford Field",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
