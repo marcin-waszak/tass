@@ -38,3 +38,5 @@ if __name__ == "__main__":
 	create_map("result_data/result_arrivals_to_deg.csv", "maps/result_arrivals_to_deg_map.html")
 	create_map("result_data/result_long_to_short.csv", "maps/result_long_to_short_map.html")
 	create_map("result_data/result_short_to_long.csv", "maps/result_short_to_long_map.html")
+	create_map("result_data/result_long_to_deg.csv", "maps/result_long_to_deg_map.html")
+	create_map("result_data/result_long_to_pop.csv", "maps/result_long_to_pop_map.html")

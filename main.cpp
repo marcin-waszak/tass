@@ -50,7 +50,7 @@ struct Airport {
 		if (deg <= 1 || std::isnan(deg)) {
 			deg = 1;
 		}
-		return static_cast<double>(arrivals / deg);
+		return static_cast<double>(arrivals) / deg;
 	}
 
 	double LongToShort() const {
@@ -58,7 +58,7 @@ struct Airport {
 		if (sh == 0) {
 			sh = 1;
 		}
-		return static_cast<double>(long_haul / sh);
+		return static_cast<double>(long_haul) / sh;
 	}
 
 	double ShortToLong() const {
@@ -66,7 +66,23 @@ struct Airport {
 		if (lh == 0) {
 			lh = 1;
 		}
-		return static_cast<double>(short_haul / lh);
+		return static_cast<double>(short_haul) / lh;
+	}
+
+	double LongToDeg() const {
+		unsigned long deg = Deg();
+		if (deg <= 1 || std::isnan(deg)) {
+			deg = 1;
+		}
+		return static_cast<double>(long_haul) / deg;
+	}
+
+	double LongToPop() const {
+		unsigned long pop = population_50km;
+		if(pop == 0){
+			pop = 1;
+		}
+		return static_cast<double>(long_haul) / pop;
 	}
 };
 
@@ -203,7 +219,7 @@ public:
 		for (const auto& airport : airports) {
 			//no need to drop low population cases, usually big vertice degree is near huge city
 			i++;
-			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "\n";
+			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.LongToDeg() << "\n";
 			if(i >= 25)
 				break;
 		}
@@ -218,23 +234,47 @@ public:
 		for (const auto& airport : airports_)
 			airports.push_back(airport.second);
 
-		sort(airports.begin(), airports.end(), [](const Airport &x, const Airport &y){ return (x.ArrivalsToDeg() > y.ArrivalsToDeg());});
+		sort(airports.begin(), airports.end(), [](const Airport &x, const Airport &y){ return (x.LongToDeg() > y.LongToDeg());});
 
 		int i = 0;
 
 		for (const auto& airport : airports) {
 			//drop corner cases where, population is low and degree is really low
-			if(airport.population_10km < 10000 || airport.Deg() < 10)
+			if(airport.population_10km < 2000 || airport.Deg() < 10)
 				continue;
 
 			i++;
-			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "\n";
+			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "," << airport.LongToDeg() << "\n";
 			if(i >= 25)
 				break;
 		}
 		result_csv_file.close();
 	}
 
+
+	void SortByLongToDeg() const {
+		std::vector<Airport> airports;
+		std::ofstream result_csv_file;
+		result_csv_file.open("result_data/result_long_to_deg.csv");
+		for (const auto& airport : airports_)
+			airports.push_back(airport.second);
+
+		sort(airports.begin(), airports.end(), [](const Airport &x, const Airport &y){ return (x.LongToDeg() > y.LongToDeg());});
+
+		int i = 0;
+
+		for (const auto& airport : airports) {
+			//drop corner cases where, population is low and degree is really low
+			if(airport.population_10km < 2000)
+				continue;
+
+			i++;
+			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "," << airport.LongToDeg() << "\n";
+			if(i >= 25)
+				break;
+		}
+		result_csv_file.close();
+	}
 
 	void SortByLongToShort() const {
 		std::vector<Airport> airports;
@@ -252,7 +292,7 @@ public:
 			if(airport.population_10km < 2000)
 				continue;
 			i++;
-			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "\n";
+			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "," << airport.LongToDeg() << "\n";
 			if(i >= 25)
 				break;
 		}
@@ -275,7 +315,30 @@ public:
 			if(airport.population_10km < 2000)
 				continue;
 			i++;
-			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "\n";
+			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "," << airport.LongToDeg() << "\n";
+			if(i >= 25)
+				break;
+		}
+		result_csv_file.close();
+	}
+
+	void SortByLongToPop() const {
+		std::vector<Airport> airports;
+		std::ofstream result_csv_file;
+		result_csv_file.open("result_data/result_long_to_pop.csv");
+		for (const auto& airport : airports_)
+			airports.push_back(airport.second);
+
+		sort(airports.begin(), airports.end(), [](const Airport &x, const Airport &y){ return (x.LongToPop() > y.LongToPop());});
+
+		int i = 0;
+
+		for (const auto& airport : airports) {
+			//drop corner cases where, population is low
+			if(airport.population_50km < 10000 || airport.long_haul < 10)
+				continue;
+			i++;
+			result_csv_file << i << "," <<  airport.name.c_str() << "," << airport.city.c_str()<< ","  << airport.country.c_str() << "," << airport.iata_code.c_str() << "," <<  airport.population_10km << "," << airport.population_20km << "," << airport.population_50km << "," << airport.departures << "," << airport.arrivals << "," << airport.latitude << "," << airport.longitude << "," << airport.Tourism() << "," << airport.Deg() << "," << airport.ArrivalsToDeg() << "," << airport.LongToShort() << "," << airport.ShortToLong() << "," << airport.LongToDeg() << "," << airport.LongToPop() << "\n";
 			if(i >= 25)
 				break;
 		}
@@ -414,6 +477,8 @@ int main() {
 	airports.SortByArrivalsToDeg();
 	airports.SortByLongToShort();
 	airports.SortByShortToLong();
+	airports.SortByLongToDeg();
+	airports.SortByLongToPop();
 	printf("Results are available in result_data directory\n");
 	return 0;
 }
