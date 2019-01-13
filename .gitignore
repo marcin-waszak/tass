@@ -25,3 +25,7 @@ data
 
 ### CLion ###
 .idea
+
+### Output ###
+result_data
+maps
